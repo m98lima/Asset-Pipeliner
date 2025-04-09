@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvf0ignhdehv4"]
+
+[ext_resource type="Script" path="res://Scenes/Janelas/Repo cloned/Repo cloned.gd" id="1_88a58"]
+[ext_resource type="PackedScene" uid="uid://cdgfhjpgqxivk" path="res://Scenes/Components/Animated button/v2/Animated Button.tscn" id="2_31hyp"]
+
+[node name="Repo cloned" type="MarginContainer"]
+script = ExtResource("1_88a58")
+
+[node name="BoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"HeaderSmall"
+text = "O repositório foi clonado"
+
+[node name="Label" type="Label" parent="BoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 6
+text = "Mova o Asset Pipeliner para dentro da pasta do repositório e execute novamente."
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="BoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fechar"
+
+[node name="Animated Button" parent="BoxContainer" instance=ExtResource("2_31hyp")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &""
+text = "Fechar"
+button_text = "Fechar"
+
+[connection signal="pressed" from="BoxContainer/Button" to="." method="_close_program"]
+[connection signal="inner_button_pressed" from="BoxContainer/Animated Button" to="." method="_close_program"]

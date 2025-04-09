@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo6los6u6tgem"]
+
+[ext_resource type="Script" path="res://Scenes/Janelas/Clone repo/Clone handler.gd" id="1_1d4vo"]
+[ext_resource type="Texture2D" uid="uid://bsx8gj8iq6sda" path="res://Images/Github code button.jpg" id="2_8rwad"]
+[ext_resource type="PackedScene" uid="uid://cdgfhjpgqxivk" path="res://Scenes/Components/Animated button/v2/Animated Button.tscn" id="3_7lwrx"]
+
+[node name="Clone repo" type="MarginContainer" node_paths=PackedStringArray("clone_button")]
+script = ExtResource("1_1d4vo")
+clone_button = NodePath("VBoxContainer/HBoxContainer/Clone button")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"HeaderSmall"
+text = "Clonar um repositório"
+
+[node name="Instructions" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(430, 0)
+layout_mode = 2
+text = "- Vá até a página do repositório no github e clique no botão \"Code\".
+- Clique no botão indicado com a seta para copiar a url do repositório (a aba HTTPS deve estar selecionada).
+- Cole a url copiada na caixa,  clique \"clonar\" e aguarde."
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("2_8rwad")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Token" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+placeholder_text = "Token de acesso"
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 2
+
+[node name="URL" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+placeholder_text = "URL do repositório"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Clonar"
+
+[node name="Clone button" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_7lwrx")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_type_variation = &""
+text = "Clonar"
+button_text = "Clonar"
+button_disabled = true
+
+[connection signal="text_changed" from="VBoxContainer/Token" to="." method="_update_token"]
+[connection signal="text_changed" from="VBoxContainer/URL" to="." method="_update_url"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_attempt_to_clone"]
+[connection signal="inner_button_pressed" from="VBoxContainer/HBoxContainer/Clone button" to="." method="_attempt_to_clone"]

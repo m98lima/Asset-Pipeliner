@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb8tmekegrg5b"]
+
+[ext_resource type="Script" path="res://Scenes/Janelas/Please Wait/Please Wait.gd" id="1_h17yv"]
+[ext_resource type="PackedScene" uid="uid://cdgfhjpgqxivk" path="res://Scenes/Components/Animated button/v2/Animated Button.tscn" id="2_03gya"]
+
+[node name="Please Wait" type="MarginContainer"]
+script = ExtResource("1_h17yv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Por favor, aguarde"
+
+[node name="Message" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 6
+text = "O Asset Pipeliner está checando se há alterações no repositório remoto"
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="VBoxContainer"]
+wait_time = 0.2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Tudo ok, pode prosseguir."
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+theme_type_variation = &"ForwardButton"
+
+[node name="Animated Button" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_03gya")]
+custom_minimum_size = Vector2(36, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"ForwardButton"
+variation = 1
+
+[connection signal="timeout" from="VBoxContainer/Timer" to="." method="_timeout"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_next_window"]
+[connection signal="inner_button_pressed" from="VBoxContainer/HBoxContainer/Animated Button" to="." method="_next_window"]

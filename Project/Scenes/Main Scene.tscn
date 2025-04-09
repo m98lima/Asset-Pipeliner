@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm47yoiflaouj"]
+
+[ext_resource type="Script" path="res://Scenes/App Handler.gd" id="1_bd28e"]
+[ext_resource type="Texture2D" uid="uid://bw1mpp7fypmm7" path="res://Kenney assets/UI Pack/PNG/Double/pattern_diagonal_transparent_large.png" id="1_rbpaf"]
+[ext_resource type="PackedScene" uid="uid://c1jwkcjtiv7cx" path="res://Scenes/Panel.tscn" id="1_xtju5"]
+
+[sub_resource type="Animation" id="Animation_113nq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window Parent:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2nf6b"]
+resource_name = "Switch screens"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window Parent:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.95, 0.95), Vector2(1.05, 1.05), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txyfo"]
+_data = {
+"RESET": SubResource("Animation_113nq"),
+"Switch screens": SubResource("Animation_2nf6b")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_bd28e")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rbpaf")
+stretch_mode = 1
+
+[node name="Window Parent" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main panel" parent="Window Parent" instance=ExtResource("1_xtju5")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_txyfo")
+}

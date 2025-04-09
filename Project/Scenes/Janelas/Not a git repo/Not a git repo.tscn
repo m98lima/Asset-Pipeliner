@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdcbnvsm1gsc7"]
+
+[ext_resource type="Script" path="res://Scenes/Janelas/Not a git repo/Not a repo.gd" id="1_rtluc"]
+[ext_resource type="PackedScene" uid="uid://cdgfhjpgqxivk" path="res://Scenes/Components/Animated button/v2/Animated Button.tscn" id="2_a8qqj"]
+
+[node name="Not a git repo" type="MarginContainer"]
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_rtluc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"HeaderSmall"
+text = "A pasta atual não é um repositório git"
+
+[node name="GridContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="First Steps" type="Button" parent="VBoxContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Primeiros passos"
+
+[node name="Clone Repo" type="Button" parent="VBoxContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Clonar um repositório"
+
+[node name="First steps" parent="VBoxContainer/GridContainer" instance=ExtResource("2_a8qqj")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+theme_type_variation = &""
+text = "Primeiros passos"
+button_text = "Primeiros passos"
+
+[node name="Clone repo" parent="VBoxContainer/GridContainer" instance=ExtResource("2_a8qqj")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+theme_type_variation = &""
+text = "Clonar um repositório"
+button_text = "Clonar um repositório"
+
+[connection signal="pressed" from="VBoxContainer/GridContainer/First Steps" to="." method="_move_to_first_steps"]
+[connection signal="pressed" from="VBoxContainer/GridContainer/Clone Repo" to="." method="_move_to_clone_repo"]
+[connection signal="inner_button_pressed" from="VBoxContainer/GridContainer/First steps" to="." method="_move_to_first_steps"]
+[connection signal="inner_button_pressed" from="VBoxContainer/GridContainer/Clone repo" to="." method="_move_to_clone_repo"]

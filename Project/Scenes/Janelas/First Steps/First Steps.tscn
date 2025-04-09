@@ -1,0 +1,284 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2morkpsak0js"]
+
+[ext_resource type="Script" path="res://Scenes/Janelas/First Steps/First Steps.gd" id="1_naqhf"]
+[ext_resource type="Script" path="res://Scenes/Janelas/First Steps/Link Handler.gd" id="2_751vn"]
+[ext_resource type="PackedScene" uid="uid://cdgfhjpgqxivk" path="res://Scenes/Components/Animated button/v2/Animated Button.tscn" id="3_7l0tg"]
+
+[node name="First Steps" type="MarginContainer"]
+script = ExtResource("1_naqhf")
+
+[node name="Install git" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Install git"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Instale o git"
+
+[node name="Spacer" type="Control" parent="Install git"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Install git"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Siga a instalação padrão do git, nenhuma configuração especial é necessária."
+autowrap_mode = 2
+
+[node name="Spacer2" type="Control" parent="Install git"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Install git"]
+layout_mode = 2
+size_flags_vertical = 10
+script = ExtResource("2_751vn")
+link = "https://git-scm.com/downloads"
+
+[node name="Open Link" type="Button" parent="Install git/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Abrir link"
+
+[node name="Copy Link" type="Button" parent="Install git/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Copiar link"
+
+[node name="Open link" parent="Install git/HBoxContainer" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+theme_type_variation = &""
+text = "Abrir link"
+button_text = "Abrir link"
+
+[node name="Copy link" parent="Install git/HBoxContainer" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+theme_type_variation = &""
+text = "Copiar link"
+button_text = "Copiar link"
+
+[node name="Spacer3" type="Control" parent="Install git"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Install git"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Next Step" type="Button" parent="Install git/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"ForwardButton"
+
+[node name="Next step" parent="Install git/HBoxContainer2" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(36, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"ForwardButton"
+variation = 1
+
+[node name="Github account" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Github account"]
+layout_mode = 2
+text = "Crie uma conta no github"
+
+[node name="Spacer" type="Control" parent="Github account"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Github account"]
+layout_mode = 2
+size_flags_vertical = 10
+script = ExtResource("2_751vn")
+link = "https://github.com/signup"
+
+[node name="Open Link" type="Button" parent="Github account/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Abrir link"
+
+[node name="Copy Link" type="Button" parent="Github account/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Copiar link"
+
+[node name="Open link" parent="Github account/HBoxContainer" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+theme_type_variation = &""
+text = "Abrir link"
+button_text = "Abrir link"
+
+[node name="Copy link" parent="Github account/HBoxContainer" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+theme_type_variation = &""
+text = "Copiar link"
+button_text = "Copiar link"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Github account"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Previous Step" type="Button" parent="Github account/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_type_variation = &"BackButton"
+
+[node name="Previous step" parent="Github account/HBoxContainer2" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(36, 30)
+layout_mode = 2
+theme_type_variation = &"BackButton"
+variation = 2
+
+[node name="Control" type="Control" parent="Github account/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Next Step" type="Button" parent="Github account/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"ForwardButton"
+
+[node name="Next step" parent="Github account/HBoxContainer2" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(36, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"ForwardButton"
+variation = 1
+
+[node name="Access token" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Access token"]
+layout_mode = 2
+text = "Crie um token de acesso"
+
+[node name="Spacer" type="Control" parent="Access token"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Access token"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+text = "- Ao acessar o link abaixo, selecione a opção \"Generate new token\" e crie um token clássico.
+- Você pode colocar o título que deseje para o token no campo \"Note\" 
+- Selecione a data de expiração desejada (caso o token expire, você precisará gerar um novo e provavelmente clonar o repositório novamente).
+- Você pode marcar quaisquer opções que desejar, porém as opções na seção \"repo\" devem ser suficientes.
+- Após gerá-lo, copie o token e cole na próxima tela para clonar o repositório.
+obs: Não é possível acessar o token novamente, caso queira reutilizar o mesmo, guarde-o em algum lugar. 
+obs2: É possível gerar um novo token, caso perca o que você já tem."
+autowrap_mode = 2
+
+[node name="Spacer2" type="Control" parent="Access token"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Access token"]
+layout_mode = 2
+size_flags_vertical = 10
+script = ExtResource("2_751vn")
+link = "https://github.com/settings/tokens"
+
+[node name="Open Link" type="Button" parent="Access token/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Abrir link"
+
+[node name="Copy Link" type="Button" parent="Access token/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Copiar link"
+
+[node name="Open link" parent="Access token/HBoxContainer" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_type_variation = &""
+text = "Abrir link"
+button_text = "Abrir link"
+
+[node name="Copy link" parent="Access token/HBoxContainer" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_type_variation = &""
+text = "Copiar link"
+button_text = "Copiar link"
+
+[node name="Spacer3" type="Control" parent="Access token"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Access token"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Previous Step" type="Button" parent="Access token/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme_type_variation = &"BackButton"
+
+[node name="Previous step" parent="Access token/HBoxContainer2" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(36, 30)
+layout_mode = 2
+theme_type_variation = &"BackButton"
+variation = 2
+
+[node name="Control" type="Control" parent="Access token/HBoxContainer2"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="Clone Repo" type="Button" parent="Access token/HBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Clonar repositório"
+
+[node name="Clone repo" parent="Access token/HBoxContainer2" instance=ExtResource("3_7l0tg")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &""
+text = "Clonar repositório"
+button_text = "Clonar repositório"
+
+[connection signal="pressed" from="Install git/HBoxContainer/Open Link" to="Install git/HBoxContainer" method="_open_link"]
+[connection signal="pressed" from="Install git/HBoxContainer/Copy Link" to="Install git/HBoxContainer" method="_copy_link"]
+[connection signal="inner_button_pressed" from="Install git/HBoxContainer/Open link" to="Install git/HBoxContainer" method="_open_link"]
+[connection signal="inner_button_pressed" from="Install git/HBoxContainer/Copy link" to="Install git/HBoxContainer" method="_copy_link"]
+[connection signal="pressed" from="Install git/HBoxContainer2/Next Step" to="." method="_next_step"]
+[connection signal="inner_button_pressed" from="Install git/HBoxContainer2/Next step" to="." method="_next_step"]
+[connection signal="pressed" from="Github account/HBoxContainer/Open Link" to="Github account/HBoxContainer" method="_open_link"]
+[connection signal="pressed" from="Github account/HBoxContainer/Copy Link" to="Github account/HBoxContainer" method="_copy_link"]
+[connection signal="inner_button_pressed" from="Github account/HBoxContainer/Open link" to="Github account/HBoxContainer" method="_open_link"]
+[connection signal="inner_button_pressed" from="Github account/HBoxContainer/Copy link" to="Github account/HBoxContainer" method="_copy_link"]
+[connection signal="pressed" from="Github account/HBoxContainer2/Previous Step" to="." method="_previous_step"]
+[connection signal="inner_button_pressed" from="Github account/HBoxContainer2/Previous step" to="." method="_previous_step"]
+[connection signal="pressed" from="Github account/HBoxContainer2/Next Step" to="." method="_next_step"]
+[connection signal="inner_button_pressed" from="Github account/HBoxContainer2/Next step" to="." method="_next_step"]
+[connection signal="pressed" from="Access token/HBoxContainer/Open Link" to="Access token/HBoxContainer" method="_open_link"]
+[connection signal="pressed" from="Access token/HBoxContainer/Copy Link" to="Access token/HBoxContainer" method="_copy_link"]
+[connection signal="inner_button_pressed" from="Access token/HBoxContainer/Open link" to="Access token/HBoxContainer" method="_open_link"]
+[connection signal="inner_button_pressed" from="Access token/HBoxContainer/Copy link" to="Access token/HBoxContainer" method="_copy_link"]
+[connection signal="pressed" from="Access token/HBoxContainer2/Previous Step" to="." method="_previous_step"]
+[connection signal="inner_button_pressed" from="Access token/HBoxContainer2/Previous step" to="." method="_previous_step"]
+[connection signal="pressed" from="Access token/HBoxContainer2/Clone Repo" to="." method="_move_to_clone_repo"]
+[connection signal="inner_button_pressed" from="Access token/HBoxContainer2/Clone repo" to="." method="_move_to_clone_repo"]

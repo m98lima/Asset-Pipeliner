@@ -1,0 +1,110 @@
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://c6n0rw3h0hok6"]
+
+[ext_resource type="Texture2D" uid="uid://3bow82drxitq" path="res://Kenney assets/UI Pack/PNG/Double/button_brown.png" id="1_3cf5v"]
+[ext_resource type="Texture2D" uid="uid://0s702mrfeta6" path="res://Kenney assets/UI Pack/PNG/Double/minimap_arrow_d.png" id="1_ba84g"]
+[ext_resource type="Texture2D" uid="uid://dykar170uvky7" path="res://Kenney assets/UI Pack/PNG/Double/panel_brown.png" id="2_02bd0"]
+[ext_resource type="Texture2D" uid="uid://bybwl4qlmnduy" path="res://Kenney assets/UI Pack/PNG/Default/panel_brown_corners_a.png" id="2_ga2an"]
+[ext_resource type="Texture2D" uid="uid://dgxqwhnrwka6a" path="res://Kenney assets/UI Pack/PNG/Double/minimap_arrow_d_2.png" id="2_uwxr1"]
+[ext_resource type="Texture2D" uid="uid://b700k1o5q2xc6" path="res://Images/cycle.png" id="6_322m1"]
+[ext_resource type="Texture2D" uid="uid://drv7npb1wga4w" path="res://Kenney assets/UI Pack/PNG/Double/scrollbar_brown.png" id="6_b68au"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wep0r"]
+texture = ExtResource("1_ba84g")
+texture_margin_left = 18.0
+texture_margin_top = 15.0
+texture_margin_right = 18.0
+texture_margin_bottom = 15.0
+modulate_color = Color(0.878431, 0.815686, 0.643137, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6tx1y"]
+texture = ExtResource("1_3cf5v")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3quad"]
+texture = ExtResource("1_3cf5v")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_od6ay"]
+texture = ExtResource("1_3cf5v")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ukad"]
+texture = ExtResource("2_uwxr1")
+texture_margin_left = 18.0
+texture_margin_top = 15.0
+texture_margin_right = 18.0
+texture_margin_bottom = 15.0
+modulate_color = Color(0.88, 0.81664, 0.6424, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g6rrm"]
+texture = ExtResource("2_ga2an")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ur703"]
+texture = ExtResource("2_02bd0")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgjfk"]
+texture = ExtResource("6_322m1")
+modulate_color = Color(0.657864, 0.512267, 0.450827, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_123yw"]
+texture = ExtResource("6_b68au")
+texture_margin_left = 2.0
+texture_margin_top = 20.0
+texture_margin_right = 2.0
+texture_margin_bottom = 20.0
+
+[resource]
+BackButton/base_type = &"Button"
+BackButton/styles/hover = SubResource("StyleBoxTexture_wep0r")
+BackButton/styles/hover_pressed = SubResource("StyleBoxTexture_wep0r")
+BackButton/styles/normal = SubResource("StyleBoxTexture_wep0r")
+BackButton/styles/pressed = SubResource("StyleBoxTexture_wep0r")
+Button/colors/font_color = Color(0.140448, 0.140447, 0.140447, 1)
+Button/colors/font_focus_color = Color(0.152941, 0.152941, 0.152941, 1)
+Button/colors/font_hover_color = Color(0.151275, 0.151276, 0.151277, 1)
+Button/colors/font_pressed_color = Color(0.152941, 0.152941, 0.152941, 1)
+Button/styles/hover = SubResource("StyleBoxTexture_6tx1y")
+Button/styles/normal = SubResource("StyleBoxTexture_3quad")
+Button/styles/pressed = SubResource("StyleBoxTexture_od6ay")
+ForwardButton/base_type = &"Button"
+ForwardButton/styles/hover = SubResource("StyleBoxTexture_7ukad")
+ForwardButton/styles/hover_pressed = SubResource("StyleBoxTexture_7ukad")
+ForwardButton/styles/normal = SubResource("StyleBoxTexture_7ukad")
+ForwardButton/styles/pressed = SubResource("StyleBoxTexture_7ukad")
+Label/colors/font_color = Color(0.129558, 0.129558, 0.129558, 1)
+LineEdit/colors/caret_color = Color(0.072842, 0.0728428, 0.0728429, 1)
+LineEdit/colors/font_color = Color(0.076836, 0.0768357, 0.0768358, 1)
+LineEdit/colors/font_placeholder_color = Color(0.140447, 0.140447, 0.140447, 0.596078)
+LineEdit/styles/normal = SubResource("StyleBoxTexture_g6rrm")
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 18
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_ur703")
+RefreshButton/base_type = &"Button"
+RefreshButton/styles/hover = SubResource("StyleBoxTexture_kgjfk")
+RefreshButton/styles/hover_pressed = SubResource("StyleBoxTexture_kgjfk")
+RefreshButton/styles/normal = SubResource("StyleBoxTexture_kgjfk")
+RefreshButton/styles/pressed = SubResource("StyleBoxTexture_kgjfk")
+TextboxLabel/base_type = &"Label"
+TextboxLabel/font_sizes/font_size = 12
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_123yw")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_123yw")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_123yw")

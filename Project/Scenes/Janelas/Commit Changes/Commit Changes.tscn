@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3 uid="uid://b66j727onwqd1"]
+
+[ext_resource type="Script" path="res://Scenes/Janelas/Commit Changes/Commit Changes.gd" id="1_qytdm"]
+[ext_resource type="PackedScene" uid="uid://cdgfhjpgqxivk" path="res://Scenes/Components/Animated button/v2/Animated Button.tscn" id="2_3xj6r"]
+
+[node name="Commit Changes" type="MarginContainer"]
+script = ExtResource("1_qytdm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Registrar mudanças"
+
+[node name="Refresh Button" type="Button" parent="VBoxContainer/HBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"RefreshButton"
+
+[node name="Refresh button" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("2_3xj6r")]
+layout_mode = 2
+size_flags_horizontal = 10
+variation = 3
+button_disabled = false
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(700, 250)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Modified List Label" type="Label" parent="VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Arquivos modificados"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Modified files" type="Label" parent="VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Untracked List Label" type="Label" parent="VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Novos arquivos"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Untracked files" type="Label" parent="VBoxContainer/ScrollContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="Commit message Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"TextboxLabel"
+text = "Título do commit"
+
+[node name="Commit Message" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.85
+
+[node name="Commit Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Realizar commit"
+
+[node name="Commit button" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_3xj6r")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+theme_type_variation = &""
+text = "Realizar commit"
+button_text = "Realizar commit"
+button_disabled = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"TextboxLabel"
+text = "*Pode demorar um pouco"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Refresh Button" to="." method="_refresh_files"]
+[connection signal="inner_button_pressed" from="VBoxContainer/HBoxContainer2/Refresh button" to="." method="_refresh_files"]
+[connection signal="text_changed" from="VBoxContainer/Commit Message" to="." method="_update_commit_message"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Commit Button" to="." method="_commit_changes"]
+[connection signal="inner_button_pressed" from="VBoxContainer/HBoxContainer/Commit button" to="." method="_commit_changes"]

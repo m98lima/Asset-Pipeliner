@@ -1,0 +1,185 @@
+[gd_scene load_steps=7 format=3 uid="uid://bojmv0otpcy6d"]
+
+[ext_resource type="PackedScene" uid="uid://bvkxkwp6j01lh" path="res://Scenes/Components/Animated button/Old (not working well)/Animated Button.tscn" id="1_2svpo"]
+[ext_resource type="Script" path="res://Scenes/Components/Animated button/Old (not working well)/Window Shaker.gd" id="1_m2xtj"]
+[ext_resource type="PackedScene" uid="uid://cdgfhjpgqxivk" path="res://Scenes/Components/Animated button/v2/Animated Button.tscn" id="2_dwafh"]
+
+[sub_resource type="Animation" id="Animation_bb5k0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/Control2/Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_42xsi"]
+resource_name = "Spin Panel"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/Control2/Pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, -2.0944, -6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t73sw"]
+_data = {
+"RESET": SubResource("Animation_bb5k0"),
+"Spin Panel": SubResource("Animation_42xsi")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m2xtj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -227.5
+offset_right = 197.0
+offset_bottom = 227.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Pivot" type="Control" parent="HBoxContainer/Control2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Main Panel" type="PanelContainer" parent="HBoxContainer/Control2/Pivot"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -247.5
+offset_right = 155.0
+offset_bottom = 207.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control2/Pivot/Main Panel"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/ScrollContainer"]
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed est lacus, eleifend nec tempus ac, porttitor sit amet justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed sagittis sagittis tincidunt. Nunc cursus neque purus, suscipit bibendum orci iaculis vitae. Aliquam ultrices sagittis est et porta. Nulla nec lacus sed nisi mattis bibendum. Integer ullamcorper diam est, ut fringilla sapien cursus eu. Integer eget leo et diam scelerisque malesuada nec ac leo. Aliquam eget molestie erat. Quisque felis nulla, ultricies sed dictum eu, malesuada vel turpis. Mauris efficitur lacus nec felis vulputate porttitor. Nunc aliquet mi non nisl mattis facilisis. Vestibulum faucibus magna at leo interdum rhoncus.
+
+Donec nisi arcu, rhoncus eu pharetra sit amet, consequat laoreet ante. Pellentesque justo eros, viverra id laoreet in, mollis ut ligula. Etiam non libero quam. Maecenas rutrum odio dapibus porta tempus. Donec pellentesque aliquet tortor eu accumsan. Suspendisse sit amet condimentum massa, ut aliquet quam. Donec a fringilla dui, vel gravida enim. Quisque bibendum pretium faucibus. Fusce at ante vel risus elementum porttitor eget ac turpis.
+
+Integer sit amet metus non ante tempor tincidunt. Phasellus vel nibh cursus, scelerisque mauris ac, sollicitudin diam. Sed a neque vulputate lorem ultrices bibendum. Maecenas at sodales diam. Pellentesque interdum viverra bibendum. Nullam accumsan urna tortor, ac consequat mi tincidunt in. Nunc ac lacus elit. Phasellus ac placerat neque. Integer tempus mi quis ullamcorper lacinia. In eget malesuada lacus. Sed sollicitudin lacinia purus vel ullamcorper. Integer tempor nibh ac facilisis lobortis.
+
+Morbi dui massa, vulputate a fermentum vel, viverra ut lacus. Praesent vel lacus non nisi venenatis egestas quis eu risus. Duis a ligula vehicula dolor vestibulum faucibus et sed felis. Curabitur condimentum massa est, id feugiat leo sodales eget. Nunc nec nisi lorem. Nunc id euismod nunc. Etiam sodales fringilla venenatis. Proin eget pulvinar leo, vitae posuere nisl.
+
+Mauris quis nunc id est vehicula condimentum. Duis lacinia rutrum ultrices. Sed quis arcu sit amet ex ullamcorper posuere nec quis mi. Nunc ac mauris sit amet nunc blandit luctus. In luctus tortor non orci porttitor consequat. Quisque viverra ipsum tortor, quis commodo enim varius vel. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Animated button" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/HBoxContainer" instance=ExtResource("1_2svpo")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Animated Button 2" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/HBoxContainer2" instance=ExtResource("2_dwafh")]
+custom_minimum_size = Vector2(36, 30)
+layout_mode = 2
+size_flags_horizontal = 2
+theme_type_variation = &"BackButton"
+
+[node name="Animated Button 3" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/HBoxContainer2" instance=ExtResource("2_dwafh")]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Animated Button 4" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/HBoxContainer2" instance=ExtResource("2_dwafh")]
+custom_minimum_size = Vector2(36, 30)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_type_variation = &"ForwardButton"
+
+[node name="Animated Button 4" parent="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer" instance=ExtResource("2_dwafh")]
+custom_minimum_size = Vector2(60, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &""
+text = "Botão"
+button_text = "Botão"
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Side Panel" type="PanelContainer" parent="HBoxContainer/Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_right = 190.0
+offset_bottom = 455.0
+scale = Vector2(0.1, 0.7)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Control/Side Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Control/Side Panel/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed est lacus, eleifend nec tempus ac, porttitor sit amet justo."
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t73sw")
+}
+
+[connection signal="inner_button_pressed" from="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/HBoxContainer2/Animated Button 3" to="." method="_spin_panel"]
+[connection signal="inner_button_pressed" from="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/HBoxContainer2/Animated Button 4" to="." method="_open_side_panel"]
+[connection signal="inner_button_pressed" from="HBoxContainer/Control2/Pivot/Main Panel/VBoxContainer/Animated Button 4" to="." method="_shake_screen"]
