@@ -14,7 +14,8 @@ config/name="Asset Pipeliner"
 config/tags=PackedStringArray("ccmec")
 run/main_scene="res://Scenes/Main Scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Images/tee-pipe.png"
+config/windows_native_icon="res://Images/tee-pipe.ico"
 
 [autoload]
 
