@@ -28,7 +28,6 @@ theme_type_variation = &"RefreshButton"
 layout_mode = 2
 size_flags_horizontal = 10
 variation = 3
-button_disabled = false
 
 [node name="Spacer" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 35)

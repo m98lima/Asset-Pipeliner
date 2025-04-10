@@ -39,8 +39,13 @@ func _trim_status_message(original_message: String) -> Array[String]:
 
 
 func _update_commit_message(new_message: String) -> void:
+	var uncommited_changes: bool = (modified_list.text != "Nenhum arquivo modificado") || (untracked_list.text != "Nenhum arquivo novo");
+	#uncommited_changes = uncommited_changes || ;
+	#uncommited_changes = uncommited_changes ||;
+
 	commit_message = new_message;
-	%"Commit button".button_disabled = commit_message == "";
+	if uncommited_changes:
+		%"Commit button".button_disabled = (commit_message == "");
 
 
 func _commit_changes() -> void:
