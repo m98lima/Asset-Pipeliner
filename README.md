@@ -6,6 +6,8 @@ ou
 
 Clique [aqui](https://github.com/m98lima/Asset-Pipeliner/releases)
 
+(O Windows ou seu antivírus podem reclamar pela falta de assinatura digital, mas eu não ia pagar centenas de dólares pra ter uma então ¯\_(ツ)_/¯. Pode ignorar o aviso/adicionar exceção e usar sem bronca, mas se estiver com receio, pede pra algum amigo programador dar uma olhada no código aqui nesse repositório 👍).
+
 # O que é o Asset Pipeliner
 
 Esse é um projeto simples criado com o intuito de simplificar o processo de trabalhar com repositórios git para times multidisciplinares. 
